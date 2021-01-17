@@ -59,17 +59,25 @@ let listWood=items.filter(function(item) {
          
 
 //  Q5 ----- list of items made of 8 or more materials ------
+    let lstMat=[]
     const itemMaterials=items.filter(function(item){
-        return item.materials.length > 8
-        
+        if (item.materials.length > 8) {
+            lstMat.push(item.materials)
+            return true
+        }
     })
 
     let answer5=itemMaterials.map(function(mtrl){
-
-        return `<div>${mtrl.title} has ${mtrl.materials.length} materials
-    ${mtrl.materials}</div>`
-         }).join('')
-         document.querySelector('#answer5').innerHTML=`${answer5}`
+        // let newObj = 
+        // return `<li>${mtrl.materials}</li>`
+    //     return `<div>${mtrl.title} has ${mtrl.materials.length} materials:
+    // ${mtrl.materials}</div>`
+        //  }).join('')
+    // let ansCon = itemMaterials.map(function(mtrl1){
+    //     return `${mtrl1.materials}`
+    })
+         document.querySelector('#answer5').innerHTML=`<li>${answer5}</li>`  
+        //  <li>${ansCon}</li>`
         
 
 
