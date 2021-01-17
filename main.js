@@ -56,13 +56,9 @@ let listWood=items.filter(function(item) {
          
 
 //  Q5 ----- list of items made of 8 or more materials ------
-    let lstMat=[]
-    const itemMaterials=items.filter(function(item){
-        if (item.materials.length > 8) {
-            lstMat.push(item.materials)
-            return true
-        }
-    })
+     let itemMaterials = items.filter(function(item) {
+         return item.materials.length >= 8
+     })
 
     let answer5=itemMaterials.map(function(mtrl){
         return `<div>${mtrl.title} has ${mtrl.materials.length} materials: <br>
