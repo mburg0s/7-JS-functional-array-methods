@@ -1,4 +1,4 @@
- console.log(items.materials)
+
 // Q1      ---- Average price ----- 
 
 let totalNumberOfItems = items.length
@@ -12,9 +12,8 @@ const avgPrice =(total / totalNumberOfItems).toFixed(2)
 
 document.querySelector('#answer1').innerHTML= `The average price is ${avgPrice}`
 
+
 // Q2 --- items that cost between $14 and $18 ----
-
-
 
 const costB=items.filter(function(item) {
     
@@ -22,15 +21,13 @@ const costB=items.filter(function(item) {
 })
 
  let answer2=costB.map(function(x){
-     return `<div>${x.title}</div>`
+     return `<div>${x.title}</div> <br>`
 
  }).join('')
  document.querySelector('#answer2').innerHTML=answer2
 
 
-
-
-// Q3 ------ item has GBP currency code ------
+ // Q3 ------ item has GBP currency code ------
 
 let curGBP=items.filter(function(item) {
     // console.log(item.currency_code)
@@ -52,7 +49,7 @@ let listWood=items.filter(function(item) {
 })
 
       let answer4=listWood.map(function(wood){
-        return `<div>${wood.title} is made of wood</div>`
+        return `<div>${wood.title} is made of wood</div> <br>`
    
     }).join('')
     document.querySelector('#answer4').innerHTML=answer4
@@ -68,18 +65,11 @@ let listWood=items.filter(function(item) {
     })
 
     let answer5=itemMaterials.map(function(mtrl){
-        // let newObj = 
-        // return `<li>${mtrl.materials}</li>`
-    //     return `<div>${mtrl.title} has ${mtrl.materials.length} materials:
-    // ${mtrl.materials}</div>`
-        //  }).join('')
-    // let ansCon = itemMaterials.map(function(mtrl1){
-    //     return `${mtrl1.materials}`
-    })
-         document.querySelector('#answer5').innerHTML=`<li>${answer5}</li>`  
-        //  <li>${ansCon}</li>`
-        
-
+        return `<div>${mtrl.title} has ${mtrl.materials.length} materials: <br>
+    ${mtrl.materials}</div> <br>`
+             }).join('')
+             
+    document.querySelector('#answer5').innerHTML=answer5
 
 // Q6 -------- Total Count of made by sellers
 
