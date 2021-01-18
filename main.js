@@ -10,7 +10,7 @@ items.forEach(function(item) {
 })
 const avgPrice =(total / totalNumberOfItems).toFixed(2)
 
-document.querySelector('#answer1').innerHTML= `The average price is ${avgPrice}`
+document.querySelector('#answer1').innerHTML= `The average price is $${avgPrice}`
 
 
 // Q2 --- items that cost between $14 and $18 ----
@@ -63,8 +63,9 @@ let itemMaterials = items.filter(function(item) {
 })
 
 let answer5=itemMaterials.map(function(mtrl){
+    
     return `<div>${mtrl.title} has ${mtrl.materials.length} materials: 
-    <li>${mtrl.materials}</li> </div> <br>`
+    <li >${mtrl.materials}</li> </div><br>`
     
 }).join('')
            
